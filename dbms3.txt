@@ -1,0 +1,38 @@
+select Cust_name, Account_id, Customer.Cust_id
+from Customer, Depositor
+where Customer.Cust_id=Depositor.Cust_id;
+
+
+
+select Cust_name, Depositor.Account_id, Customer.Cust_id, Balance
+from Customer, Depositor, Account
+where Customer.Cust_id=Depositor.Cust_id and
+Depositor.account_id=Account.account_id and Cust_city = 'Harrison';
+
+
+
+select cust_name, account_id
+from customer natural join depositor
+
+
+select cust_name, account_id
+from Customer join Depositor
+using (cust_id);
+
+
+select cust_name, account_id, balance
+from Customer join Depositor
+using (cust_id) join account 
+using (account_id);
+
+
+select cust_name, account_id
+from Customer join Depositor 
+on customer.cust_id = depositor.cust_id;
+
+
+select e.employee_name, e.salary, s.grade
+From employee e, salgrade s
+where e.salary between s.losal and s.hisal
+
+
